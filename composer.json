@@ -16,7 +16,16 @@
     },
     "require-dev": {
         "phploc/phploc": "*",
-        "kherge/box": "~2.5"
+        "kherge/box": "~2.5",
+        "phpdocumentor/phpdocumentor": "*",
+        "sebastian/phpcpd": "*",
+        "phpmd/phpmd": "*",
+        "pdepend/pdepend": "*",
+        "phpunit/phpunit": "*",
+        "phpunit/php-code-coverage": "*",
+        "sebastian/environment": "*",
+        "sebastian/phpdcd": "*",
+        "phing/phing": "2.*"
     },
     "autoload": {
         "classmap": [

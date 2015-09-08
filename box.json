@@ -1,0 +1,11 @@
+{
+    "chmod": "0755",
+    "directories": [
+        "src"
+    ],
+    "git-version": "git-version",
+    "git-commit": "git-commit",
+    "main": "phpbm",
+    "output": "build/phpbm.phar",
+    "stub": true
+}
