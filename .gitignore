@@ -1,0 +1,4 @@
+build/*.phar*
+build/*.tgz
+composer.lock
+vendor

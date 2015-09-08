@@ -1,0 +1,26 @@
+{
+    "name": "af/phpbm",
+    "description": "A simple tool to quickly measure server performance.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Florinsky",
+            "email": "af@simbirsoft.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/florinsky/af-php-bench/issues"
+    },
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phploc/phploc": "*",
+        "kherge/box": "~2.5"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}

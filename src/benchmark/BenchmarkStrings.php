@@ -2,7 +2,7 @@
 
 class BenchmarkStrings extends BenchmarkBase {
     protected function test() {
-        $limit = 1000000*MULT;
+        $limit = 500000*MULT;
         $string = '1234567890 \'qwer\'tyuio\'p asd\'fghjk\'l zx\'cvbnm\' QAZ \'WSX E\'DC RFV TGB YHN UJM IK';
         for($j=1; $j<$limit; $j++ ) $a = strlen($string);
         for($j=1; $j<$limit; $j++ ) $a = addslashes($string);
