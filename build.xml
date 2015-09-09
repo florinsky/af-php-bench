@@ -1,0 +1,28 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+
+<project name="phpbm" basedir="." default="info">
+    <property file="./build.properties" />
+    <property name="server" value="${${srv}.name}" />
+
+    <!-- Fileset for all files -->
+    <fileset dir="${srcdir}" id="srcfiles">
+        <include name="**" />
+    </fileset>
+
+    <target name="info" description="Just print the system information and settings">
+        <echo msg="${dir.src}" />
+        <echo msg="${dir.vendor}" />
+        <echo msg="${server}" />
+    </target>
+
+    <target name="main" description="main target">
+        <copy todir="${builddir}">
+            <fileset refid="allfiles" />
+        </copy>
+    </target>
+
+    <target name="rebuild" description="rebuilds this package">
+        <delete dir="${builddir}" />
+        <phingcall target="main" />
+    </target>
+</project>
