@@ -4,3 +4,7 @@ composer.lock
 vendor
 php-cli.error.log
 tags
+*.swp
+*.swo
+*.swn
+

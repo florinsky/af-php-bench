@@ -4,8 +4,7 @@
         "src",
         "vendor"
     ],
-    "git-version": "git-version",
     "main": "phpbm",
-    "output": "build/phpbm-@git-version@.phar",
+    "output": "phpbm.phar",
     "stub": true
 }

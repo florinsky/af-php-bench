@@ -5,9 +5,14 @@
     <property name="server" value="${${srv}.name}" />
 
     <!-- Fileset for all files -->
-    <fileset dir="${srcdir}" id="srcfiles">
+
+    <fileset dir="${dir.vendor}" id="vendor-files">
         <include name="**" />
     </fileset>
+
+    <target name="clear">
+        <delete dir="${dir.build.phar}" />
+    </target>
 
     <target name="info" description="Just print the system information and settings">
         <echo msg="${dir.src}" />
@@ -15,14 +20,31 @@
         <echo msg="${server}" />
     </target>
 
-    <target name="main" description="main target">
-        <copy todir="${builddir}">
-            <fileset refid="allfiles" />
+    <target name="phar" description="build phar">
+        <mkdir dir="${dir.build}" />
+        <mkdir dir="${dir.build.phar}" />
+        <copy todir="${dir.build.phar}/src">
+            <fileset dir="${dir.src}">
+                <include name="**" />
+            </fileset>
         </copy>
+        <copy todir="${dir.build.phar}">
+            <fileset dir=".">
+                <include name="composer.json" />
+                <include name="box.json" />
+                <include name="phpbm" />
+            </fileset>
+        </copy>
+        <exec executable="composer">
+            <arg value="--working-dir=${dir.build.phar}"/>
+            <arg value="install"/>
+            <arg value="--no-dev"/>
+        </exec>
+        <exec executable="/home/af/project/af-php-bench/vendor/bin/box" dir="${dir.build.phar}">
+            <arg value="--verbose"/>
+            <arg value="build"/>
+        </exec>
+        <copy file="${dir.build.phar}/phpbm.phar" todir="${dir.build}" overwrite="true"/>
     </target>
 
-    <target name="rebuild" description="rebuilds this package">
-        <delete dir="${builddir}" />
-        <phingcall target="main" />
-    </target>
 </project>
