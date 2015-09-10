@@ -1,5 +1,7 @@
 <?php
 
+namespace AF\Benchmark;
+
 abstract class BenchmarkBase {
     protected $_start_time=0;
     protected $_stop_time=0;

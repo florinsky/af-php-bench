@@ -1,5 +1,7 @@
 <?php
 
+namespace AF\Benchmark;
+
 class BenchmarkRand extends BenchmarkBase {
     protected function test() {
         $limit=10000000 * MULT;

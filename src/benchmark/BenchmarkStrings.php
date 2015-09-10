@@ -1,5 +1,7 @@
 <?php
 
+namespace AF\Benchmark;
+
 class BenchmarkStrings extends BenchmarkBase {
     protected function test() {
         $limit = 500000*MULT;

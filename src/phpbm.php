@@ -1,33 +1,28 @@
 <?php
 
-define('MULT', 1);
-echo "@git-version@\n";
-echo "@git-commit@\n";
+define('MULT', 0.1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-/*spl_autoload_register(function ($class) {
-    $name=$class.'.php';
-    $path='../src/base/' . $name;
-    if(file_exists($path)) {
-        require($path);
-    }
-    $path='../src/benchmark/' . $name;
-    if(file_exists($path)) {
-        require($path);
-    }
-});*/
+$app = new AF\Benchmark\BenchmarkApp();
+echo $app->getName() . "\n";
+echo $app->getVersion() . "\n";
+echo $app->getDescription() . "\n";
+echo "\n";
 
+$app->addSuite(new AF\Benchmark\BenchmarkSuite('CPU', [
+    new AF\Benchmark\BenchmarkCycles(['skip'=>false]),
+    new AF\Benchmark\BenchmarkRand(['skip'=>false]),
+    new AF\Benchmark\BenchmarkFillArray(['skip'=>false]),
+    new AF\Benchmark\BenchmarkStrings(['skip'=>false]),
+]));
 
-$bench_suite = new BenchmarkSuite([
-    new BenchmarkCycles(['skip'=>false]),
-    new BenchmarkRand(['skip'=>false]),
-    new BenchmarkFillArray(['skip'=>false]),
-    new BenchmarkStrings(['skip'=>false]),
-]);
+$app->addSuite(new AF\Benchmark\BenchmarkSuite('DISK', [
+    new AF\Benchmark\BenchmarkCycles(['skip'=>false]),
+    new AF\Benchmark\BenchmarkStrings(['skip'=>false]),
+]));
 
-$bench_suite->run();
-echo $bench_suite;
+$app->run();
 
 
 

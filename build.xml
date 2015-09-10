@@ -4,29 +4,34 @@
     <property file="./build.properties" />
     <property name="server" value="${${srv}.name}" />
 
-    <!-- Fileset for all files -->
-
-    <fileset dir="${dir.vendor}" id="vendor-files">
-        <include name="**" />
-    </fileset>
-
     <target name="clear">
         <delete dir="${dir.build.phar}" />
     </target>
 
-    <target name="info" description="Just print the system information and settings">
-        <echo msg="${dir.src}" />
-        <echo msg="${dir.vendor}" />
-        <echo msg="${server}" />
+    <target name="phplint">
+        <phplint>
+            <fileset dir="src">
+                <include name="**/*.php"/>
+            </fileset>
+        </phplint>
     </target>
 
     <target name="phar" description="build phar">
+        <!-- We are going to build the phar file in the separated directory build/phar.
+             We copy only necessary files to that directory. -->
         <mkdir dir="${dir.build}" />
         <mkdir dir="${dir.build.phar}" />
         <copy todir="${dir.build.phar}/src">
             <fileset dir="${dir.src}">
                 <include name="**" />
             </fileset>
+            <filterchain>
+                <replacetokens begintoken="@" endtoken="@">
+                    <token key="app.name" value="${app.name}" />
+                    <token key="app.version" value="${app.version}" />
+                    <token key="app.description" value="${app.description}" />
+                </replacetokens>
+            </filterchain>
         </copy>
         <copy todir="${dir.build.phar}">
             <fileset dir=".">
@@ -35,15 +40,24 @@
                 <include name="phpbm" />
             </fileset>
         </copy>
+        <!-- Run composer to fill the build/phar/vendor directory with only necessary dependencies -->
         <exec executable="composer">
             <arg value="--working-dir=${dir.build.phar}"/>
             <arg value="install"/>
             <arg value="--no-dev"/>
         </exec>
-        <exec executable="/home/af/project/af-php-bench/vendor/bin/box" dir="${dir.build.phar}">
+        <!-- Check the syntax after the tokens replacement -->
+        <phplint>
+            <fileset dir="${dir.build.phar}/src">
+                <include name="**/*.php"/>
+            </fileset>
+        </phplint>
+        <!-- Build phar file -->
+        <exec executable="${phing.dir}/${dir.vendor.bin}/box" dir="${dir.build.phar}">
             <arg value="--verbose"/>
             <arg value="build"/>
         </exec>
+        <!-- Copy the new build to build/ directory (the build/phar directory may be removed) -->
         <copy file="${dir.build.phar}/phpbm.phar" todir="${dir.build}" overwrite="true"/>
     </target>
 

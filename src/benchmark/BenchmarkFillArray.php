@@ -1,5 +1,7 @@
 <?php
 
+namespace AF\Benchmark;
+
 class BenchmarkFillArray extends BenchmarkBase {
     protected function test() {
         $limit = 1000000;

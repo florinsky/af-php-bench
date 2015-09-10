@@ -1,11 +1,15 @@
 <?php
 
+namespace AF\Benchmark;
+
 class BenchmarkSuite {
+    protected $name;
     protected $_tests=[];
     protected $_result=[];
 
-    function __construct(array $tests) {
+    function __construct($name, array $tests) {
         $this->_tests=$tests;
+        $this->name=$name;
     }
 
     function run() {
@@ -32,10 +36,11 @@ class BenchmarkSuite {
             else return $len;
         }, 0 );
         $space_len = $longest+10;
-        foreach($this->_result as $name=>$time) {
+        $text .= $this->name . "\n";
+        foreach($this->_result as $test_name=>$time) {
             $time = str_pad(' '.number_format($time,2), 8, '.', STR_PAD_LEFT);
-            $space = str_repeat('.', $space_len-strlen($name)+strlen($time));
-            $text .= "$name: $space{$time}s\n";
+            $space = str_repeat('.', $space_len-strlen($test_name)+strlen($time));
+            $text .= "$test_name: $space{$time}s\n";
         }
         return $text;
     }
