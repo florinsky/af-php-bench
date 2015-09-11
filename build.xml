@@ -41,7 +41,7 @@
             </fileset>
         </copy>
         <!-- Run composer to fill the build/phar/vendor directory with only necessary dependencies -->
-        <exec executable="composer">
+        <exec executable="${bin.composer}" checkreturn="true">
             <arg value="--working-dir=${dir.build.phar}"/>
             <arg value="install"/>
             <arg value="--no-dev"/>

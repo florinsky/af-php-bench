@@ -6,7 +6,7 @@ class BenchmarkApp {
     private $name="@app.name@";
     private $version='@app.version@';
     private $description="@app.description@";
-    private $suites=[];
+    private $groups=[];
 
     function getName() {
         return $this->name;
@@ -20,15 +20,25 @@ class BenchmarkApp {
         return $this->description;
     }
 
-    function addSuite($suite) {
-        $this->suites[] = $suite;
+    function addTestGroup($name, $tests) {
+        $this->groups[] = new BenchmarkTestGroup($name, $tests);
     }
 
     function run() {
-        foreach($this->suites as $suite) {
-            $suite->run();
-            echo $suite;
+        $pb = new BenchmarkProgressBar();
+        $pb->setTestCount($this->getTestCount());
+        foreach($this->groups as $g) {
+            $g->run($pb);
         }
     }
+
+    function getTestCount() {
+        $cnt = 0;
+        foreach($this->groups as $g) {
+            $cnt += $g->getTestCount();
+        }
+        return $cnt;
+    }
+
 }
 
