@@ -10,7 +10,7 @@
 
     <target name="phplint">
         <phplint>
-            <fileset dir="src">
+            <fileset dir="${dir.src}">
                 <include name="**/*.php"/>
             </fileset>
         </phplint>

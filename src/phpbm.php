@@ -24,6 +24,7 @@ $app->addTestGroup('STRINGS', [
 
 $app->addTestGroup('ARRAYS', [
     new AF\Benchmark\BenchmarkFillArray(['skip'=>false]),
+    new AF\Benchmark\BenchmarkArraySort(['skip'=>false]),
 ]);
 
 $app->run();
