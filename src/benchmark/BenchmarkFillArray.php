@@ -3,6 +3,12 @@
 namespace AF\Benchmark;
 
 class BenchmarkFillArray extends BenchmarkBase {
+    protected function setUp() {
+    }
+
+    protected function down() {
+    }
+
     protected function test() {
         $limit = 1000000;
         for($j=0; $j<1*MULT; $j++ ) {

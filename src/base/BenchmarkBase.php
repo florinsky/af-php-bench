@@ -24,8 +24,9 @@ abstract class BenchmarkBase {
         $this->_start_time=microtime(true);
     }
 
+    abstract protected function setUp();
     abstract protected function test();
-
+    abstract protected function down();
     abstract function getName();
 
     protected function stop() {

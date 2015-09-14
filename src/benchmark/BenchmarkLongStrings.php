@@ -3,6 +3,12 @@
 namespace AF\Benchmark;
 
 class BenchmarkLongStrings extends BenchmarkBase {
+    protected function setUp() {
+    }
+
+    protected function down() {
+    }
+
     protected function test() {
         $limit = 100*MULT;
         for($k=0; $k<$limit; $k++) {

@@ -3,6 +3,12 @@
 namespace AF\Benchmark;
 
 class BenchmarkStrHash extends BenchmarkBase {
+    protected function setUp() {
+    }
+
+    protected function down() {
+    }
+
     protected function test() {
         $limit = 10*MULT;
         for($k=0; $k<$limit; $k++) {

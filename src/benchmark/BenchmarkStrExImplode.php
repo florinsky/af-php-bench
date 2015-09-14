@@ -3,6 +3,12 @@
 namespace AF\Benchmark;
 
 class BenchmarkStrExImplode extends BenchmarkBase {
+    protected function setUp() {
+    }
+
+    protected function down() {
+    }
+
     protected function test() {
         $limit = 500*MULT;
         for($j=1; $j<$limit; $j++ ) $a = implode(' ', explode(' ', $this->book));

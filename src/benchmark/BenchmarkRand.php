@@ -3,6 +3,12 @@
 namespace AF\Benchmark;
 
 class BenchmarkRand extends BenchmarkBase {
+    protected function setUp() {
+    }
+
+    protected function down() {
+    }
+
     protected function test() {
         $limit=1000000 * MULT;
         for($i=0; $i<$limit; $i++) {

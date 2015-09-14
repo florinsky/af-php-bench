@@ -3,6 +3,12 @@
 namespace AF\Benchmark;
 
 class BenchmarkStrSimple extends BenchmarkBase {
+    protected function setUp() {
+    }
+
+    protected function down() {
+    }
+
     protected function test() {
         $limit = 200000*MULT;
         $string = '1234567890 \'qwer\'tyuio\'p asd\'fghjk\'l zx\'cvbnm\' QAZ \'WSX E\'DC RFV TGB YHN UJM IK';

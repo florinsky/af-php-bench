@@ -3,6 +3,12 @@
 namespace AF\Benchmark;
 
 class BenchmarkArraySort extends BenchmarkBase {
+    protected function setUp() {
+    }
+
+    protected function down() {
+    }
+
     protected function test() {
         $aa = microtime(true);
         $data = $this->data;
