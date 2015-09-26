@@ -3,7 +3,7 @@ This simple script allows you to quickly measure the php performance on the serv
 
 # Usage
 Just download the latest phar build: 
-https://github.com/florinsky/af-php-bench/blob/master/build/phpbm.phar
+https://github.com/florinsky/af-php-bench/raw/master/build/phpbm.phar
 
 Run:
 >chmod +x phpbm.phar
