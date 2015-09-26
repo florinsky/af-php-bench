@@ -1,9 +1,13 @@
 # AF's PHP Benchmark tool
-Author: Alexey Florinsky
+This simple script allows you to quickly measure the php performance on the server. It measures the performance of the CPU by using the different php functions.
 
-Email: idc@inbox.ru
+# Usage
+Just download the latest phar build: 
 
-Latest version: 1.0.0
+# Author
+Alexey Florinsky
+idc@inbox.ru
+
 
 
 
