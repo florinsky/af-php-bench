@@ -18,7 +18,7 @@ class BenchmarkProgressBar {
 
     function groupEnd($group_name, $total_time) {
         $time = $this->formatTime($total_time);
-        echo "Total time: $time\n\n";
+        echo "Time: $time\n\n";
     }
 
     function testCompleted($group_name, $test_name, $time) {
@@ -28,6 +28,10 @@ class BenchmarkProgressBar {
         $name = $this->formatName($test_name);
         echo $this->formatText($number, $name, $group, $time);
         $this->current_test_num++;
+    }
+
+    function theEnd($time) {
+        echo "TOTAL TIME: ".$this->formatTime($time) . "\n\n";
     }
 
     function formatNumber($current_number, $total_number) {

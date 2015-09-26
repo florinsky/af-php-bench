@@ -24,6 +24,7 @@ class BenchmarkTestGroup {
             $progress_bar->testCompleted($this->name, $t->getName(), $test_time);
         }
         $progress_bar->groupEnd($this->name, $total_time);
+        return $total_time;
     }
 
     function getTestCount() {

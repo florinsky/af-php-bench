@@ -1,18 +1,17 @@
 <?php
 
-define('MULT', 0.1);
+define('MULT', 10);
 
 require __DIR__ . '/../vendor/autoload.php';
 
 $app = new AF\Benchmark\BenchmarkApp();
 echo $app->getName() . "\n";
-echo $app->getVersion() . "\n";
-echo $app->getDescription() . "\n";
 echo "\n";
 
 $app->addTestGroup('GENERAL', [
     new AF\Benchmark\BenchmarkCycles(['skip'=>false]),
     new AF\Benchmark\BenchmarkRand(['skip'=>false]),
+    new AF\Benchmark\BenchmarkObjects(['skip'=>false]),
 ]);
 
 $app->addTestGroup('STRINGS', [
@@ -24,7 +23,8 @@ $app->addTestGroup('STRINGS', [
 
 $app->addTestGroup('ARRAYS', [
     new AF\Benchmark\BenchmarkFillArray(['skip'=>false]),
-    new AF\Benchmark\BenchmarkArraySort(['skip'=>false]),
+    new AF\Benchmark\BenchmarkArraySortIntegers(['skip'=>false]),
+    new AF\Benchmark\BenchmarkArraySortStrings(['skip'=>false]),
 ]);
 
 $app->run();

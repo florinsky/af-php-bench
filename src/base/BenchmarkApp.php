@@ -25,11 +25,13 @@ class BenchmarkApp {
     }
 
     function run() {
+        $time = 0;
         $pb = new BenchmarkProgressBar();
         $pb->setTestCount($this->getTestCount());
         foreach($this->groups as $g) {
-            $g->run($pb);
+            $time += $g->run($pb);
         }
+        $pb->theEnd($time);
     }
 
     function getTestCount() {
