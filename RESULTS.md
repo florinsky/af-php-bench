@@ -1,3 +1,9 @@
+# Summary
+
+          | NUC i5 | VB on NUC i5 | VMware on i7-4790K | Virtual on Xeon X5675  | Virtual on Xeon X3440
+----------|--------|--------------|--------------------|------------------------|----------------------
+Time (sec)| 245    | 338          | 246                | 126                    | 407
+
 # NUC i5
 Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz
 ````
@@ -76,4 +82,55 @@ TOTAL TIME: . 246.72
 ````
 
 Good result except Long String test (concatenation of long strings). It is a strange behavoir of VMware player.
+
+# Virtual Server on Xeon X5675
+Virtual LAMP Server on the Intel(R) Xeon(R) CPU X5675  @ 3.07GHz
+````
+[GENERAL]
+ 1/10 Cycles (if, while, do)  ...................... 9.69s
+ 2/10 Generate Random Numbers  ..................... 3.55s
+ 3/10 Objects  ..................................... 5.15s
+Time: .. 18.39
+
+[STRINGS]
+ 4/10 Simple Strings Functions  ................... 12.96s
+ 5/10 Explode/Implode  ............................ 15.95s
+ 6/10 Long Strings  ................................ 5.65s
+ 7/10 String Hash  ................................ 17.98s
+Time: .. 52.54
+
+[ARRAYS]
+ 8/10 Fill arrays  ................................ 17.20s
+ 9/10 Array Sort (Integer Keys and Values)  ....... 21.03s
+10/10 Array Sort (String Keys and Values)  ........ 17.59s
+Time: .. 55.83
+
+TOTAL TIME: . 126.75
+````
+Excelent result!
+
+# Virtual Server on Xeon X3440
+Virtual LAMP Server, OpenVZ, on the Intel(R) Xeon(R) CPU X3440  @ 2.53GHz
+````
+[GENERAL]
+ 1/10 Cycles (if, while, do)  ..................... 76.12s
+ 2/10 Generate Random Numbers  .................... 40.10s
+ 3/10 Objects  .................................... 26.65s
+Time: . 142.87
+
+[STRINGS]
+ 4/10 Simple Strings Functions  ................... 42.85s
+ 5/10 Explode/Implode  ............................ 32.25s
+ 6/10 Long Strings  ............................... 33.35s
+ 7/10 String Hash  ................................ 26.35s
+Time: . 134.81
+
+[ARRAYS]
+ 8/10 Fill arrays  ................................ 50.65s
+ 9/10 Array Sort (Integer Keys and Values)  ....... 42.52s
+10/10 Array Sort (String Keys and Values)  ........ 36.25s
+Time: . 129.43
+
+TOTAL TIME: . 407.10
+````
 
