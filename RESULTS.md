@@ -88,6 +88,8 @@ Good result except Long String test (concatenation of long strings). It is a str
 
 # Virtual Server on Xeon X5675
 Virtual LAMP Server on the Intel(R) Xeon(R) CPU X5675  @ 3.07GHz
+PHP 5.4.45-0+deb7u1 (cli) (built: Sep 10 2015 08:34:47) 
+Zend Engine v2.4.0
 ````
 [GENERAL]
  1/10 Cycles (if, while, do)  ...................... 9.69s
@@ -114,6 +116,8 @@ Excelent result!
 
 # Virtual Server on Xeon X3440
 Virtual LAMP Server, OpenVZ, on the Intel(R) Xeon(R) CPU X3440  @ 2.53GHz
+PHP 5.5.26-1+deb.sury.org~precise+1 (cli) (built: Jun 15 2015 10:04:48) 
+Zend Engine v2.5.0 with Zend OPcache v7.0.6-dev
 ````
 [GENERAL]
  1/10 Cycles (if, while, do)  ..................... 76.12s
