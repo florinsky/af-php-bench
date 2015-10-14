@@ -141,3 +141,30 @@ Time: . 129.43
 TOTAL TIME: . 407.10
 ````
 
+# MacBook Pro (2015)
+CPU 2.9 GHz Intel Core i5
+PHP 5.5.27 (cli) (built: Aug 22 2015 18:20:44) 
+````
+AF's PHP Benchmark tool :) (idc@inbox.ru) version 1.0.0
+
+[GENERAL]
+ 1/10 Cycles (if, while, do)  ...................... 6.50s
+ 2/10 Generate Random Numbers  ..................... 3.20s
+ 3/10 Objects  ..................................... 4.73s
+Time: .. 14.44
+
+[STRINGS]
+ 4/10 Simple Strings Functions  ................... 12.70s
+ 5/10 Explode/Implode  ............................ 15.56s
+ 6/10 Long Strings  ............................... 29.52s
+ 7/10 String Hash  ................................ 23.40s
+Time: .. 81.18
+
+[ARRAYS]
+ 8/10 Fill arrays  ................................ 21.95s
+ 9/10 Array Sort (Integer Keys and Values)  ....... 16.43s
+10/10 Array Sort (String Keys and Values)  ........ 14.10s
+Time: .. 52.49
+
+TOTAL TIME: . 148.10
+````
