@@ -87,8 +87,8 @@ TOTAL TIME: . 246.72
 Good result except Long String test (concatenation of long strings). It is a strange behavoir of VMware player.
 
 # Virtual Server on Xeon X5675
-Virtual LAMP Server on the Intel(R) Xeon(R) CPU X5675  @ 3.07GHz
-PHP 5.4.45-0+deb7u1 (cli) (built: Sep 10 2015 08:34:47) 
+Virtual LAMP Server on the Intel(R) Xeon(R) CPU X5675  @ 3.07GHz,
+PHP 5.4.45-0+deb7u1 (cli) (built: Sep 10 2015 08:34:47),
 Zend Engine v2.4.0
 ````
 [GENERAL]
@@ -115,8 +115,8 @@ TOTAL TIME: . 126.75
 Excelent result!
 
 # Virtual Server on Xeon X3440
-Virtual LAMP Server, OpenVZ, on the Intel(R) Xeon(R) CPU X3440  @ 2.53GHz
-PHP 5.5.26-1+deb.sury.org~precise+1 (cli) (built: Jun 15 2015 10:04:48) 
+Virtual LAMP Server, OpenVZ, on the Intel(R) Xeon(R) CPU X3440  @ 2.53GHz, 
+PHP 5.5.26-1+deb.sury.org~precise+1 (cli) (built: Jun 15 2015 10:04:48), 
 Zend Engine v2.5.0 with Zend OPcache v7.0.6-dev
 ````
 [GENERAL]
@@ -142,7 +142,7 @@ TOTAL TIME: . 407.10
 ````
 
 # MacBook Pro (2015)
-CPU 2.9 GHz Intel Core i5
+CPU 2.9 GHz Intel Core i5, 
 PHP 5.5.27 (cli) (built: Aug 22 2015 18:20:44) 
 ````
 AF's PHP Benchmark tool :) (idc@inbox.ru) version 1.0.0
