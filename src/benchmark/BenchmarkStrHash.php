@@ -13,7 +13,7 @@ class BenchmarkStrHash extends BenchmarkBase {
         $limit = 150*MULT;
         for($k=0; $k<$limit; $k++) {
             $a = \crc32($this->book);
-            $b = \crypt($this->book);
+            $b = \crypt($this->book, 'asdasdaa');
             $c = \md5($this->book);
             $d = \sha1($this->book);
         }
