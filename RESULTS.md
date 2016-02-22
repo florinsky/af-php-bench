@@ -1,11 +1,11 @@
 # Summary
 
-          | NUC i5 | VB on NUC i5 | VMware on i7-4790K | Virtual on Xeon X5675  | Virtual on Xeon X3440 | MacBook Pro 2015
-----------|--------|--------------|--------------------|------------------------|----------------------|--------
-General   | 61     | 107          | 42                 | 18                     | 142                  | 15 
-Strings   | 104    | 144          | 152                | 52                     | 134                  | 81
-Arrays    | 79     | 86           | 51                 | 56                     | 129                  | 52
-Time (sec)| 245    | 338          | 246                | 126                    | 407                  | 148
+          | NUC i5 | VB on NUC i5 | VMware on i7-4790K | Virtual on Xeon X5675  | Virtual on Xeon X3440 | MacBook Pro 2015 PHP55| MacBook Pro 2015 PHP70
+----------|--------|--------------|--------------------|------------------------|----------------------|--------|-------
+General   | 61     | 107          | 42                 | 18                     | 142                  | 15     |8
+Strings   | 104    | 144          | 152                | 52                     | 134                  | 81     |18
+Arrays    | 79     | 86           | 51                 | 56                     | 129                  | 52     |19
+Time (sec)| 245    | 338          | 246                | 126                    | 407                  | 148    |45
 
 # NUC i5
 Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz
@@ -167,4 +167,30 @@ Time: .. 81.18
 Time: .. 52.49
 
 TOTAL TIME: . 148.10
+````
+
+# MacBook Pro (2015)
+CPU 2.9 GHz Intel Core i5, 
+PHP 7.0.3 (cli) (built: Feb  8 2016 04:09:22) ( NTS )
+````
+[GENERAL]
+ 1/10 Cycles (if, while, do)  ...................... 3.87s
+ 2/10 Generate Random Numbers  ..................... 1.41s
+ 3/10 Objects  ..................................... 2.33s
+Time: ... 7.61
+
+[STRINGS]
+ 4/10 Simple Strings Functions  .................... 9.29s
+ 5/10 Explode/Implode  ............................. 4.22s
+ 6/10 Long Strings  ................................ 4.53s
+ 7/10 String Hash  ................................. 0.05s
+Time: .. 18.10
+
+[ARRAYS]
+ 8/10 Fill arrays  ................................. 4.26s
+ 9/10 Array Sort (Integer Keys and Values)  ........ 6.85s
+10/10 Array Sort (String Keys and Values)  ......... 7.57s
+Time: .. 18.68
+
+TOTAL TIME: .. 44.40
 ````
