@@ -112,7 +112,7 @@ Time: .. 55.83
 
 TOTAL TIME: . 126.75
 ````
-Excelent result!
+Excellent result!
 
 # Virtual Server on Xeon X3440
 Virtual LAMP Server, OpenVZ, on the Intel(R) Xeon(R) CPU X3440  @ 2.53GHz, 
